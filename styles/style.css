@@ -1,0 +1,190 @@
+:root {
+  --primary-color: rgba(20, 111, 167, 0.749);
+  --secundary-color: rgba(193, 206, 223, 0.397);
+  --tertiary-color: rgba(245, 245, 245, 0.308);
+}
+
+h2 {
+  margin: 5px 0px;
+}
+
+h3 {
+  margin: 0px;
+}
+
+h4 {
+  margin: 8px 5px 0px 5px;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+header {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+body {
+  margin: 0px;
+  background-image: url(/Assets/fondo1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 50% 49.65%;
+  grid-template-rows: 200px 1fr 1fr 30px;
+  grid-template-areas:
+    "main__card-profile main__card-profile"
+    "about-me education"
+    "technologies experience"
+    "main__footer main__footer";
+  gap: 4px;
+  margin: 0 auto;
+  width: 65vw;
+  font-family: sans-serif;
+  background-color: var(--secundary-color);
+}
+
+.main__card-profile {
+  grid-area: main__card-profile;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.card-profile__photo {
+  margin-right: 15px;
+  width: 160px;
+  height: 160px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.card-profile__info {
+  text-align: end;
+}
+
+.card-profile__social-media {
+  margin: 0px;
+  padding: 0px 0px;
+  padding-top: 5px;
+  align-items: center;
+}
+
+.main__section {
+  background-color: var(--tertiary-color);
+}
+
+.section__description {
+  margin: 0px;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+}
+
+.about-me {
+  grid-area: about-me;
+}
+
+.education {
+  grid-area: education;
+}
+
+.technologies {
+  grid-area: technologies;
+}
+
+.technologies__p {
+  margin: 0px;
+  padding-top: 10px;
+  text-align: center;
+  text-decoration: underline 3px;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+.main__footer {
+  grid-area: main__footer;
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  h4 {
+    margin-top: 10px;
+  }
+
+  .main {
+    grid-template-columns: 100%;
+    grid-template-rows: 230px max-content max-content max-content max-content 30px;
+    grid-template-areas:
+      "main__card-profile"
+      "about-me"
+      "education"
+      "technologies"
+      "experience"
+      "main__footer";
+    width: 95vw;
+  }
+
+  .main__card-profile {
+    display: block;
+  }
+
+  .card-profile__photo {
+    margin: 15px auto;
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-profile__info {
+    text-align: center;
+  }
+
+  .card-profile__social-media {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+  .main {
+    grid-template-rows: 200px 1fr 1fr 30px;
+    width: 80vw;
+  }
+
+  .main__card-profile {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-profile__photo {
+    margin-right: 15px;
+    width: 138px;
+    height: 138px;
+  }
+
+  .card-profile__info {
+    text-align: center;
+  }
+
+  .card-profile__social-media {
+    align-items: center;
+  }
+}
